@@ -1,16 +1,19 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
 int main()
 {
-  string var1 = "";
-  cout << "Hello World!" << endl;
+  string date1 = "";
+  string date2 = "";
 
-  cin >> var1;
+  cout << "Please enter two dates: ";
 
-  cout << "Hello World! " << var1 << endl;
+  cin >> date1 >> date2;
+
+  cout << "Date 1: " << date1 << endl
+       << "Date 2: " << date2 << endl;
+
   return 0;
 }
