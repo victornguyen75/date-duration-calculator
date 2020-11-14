@@ -10,6 +10,12 @@ public:
   int month;
   int day;
   std::string error;
+  Date()
+  {
+    year = 0;
+    month = 0;
+    day = 0;
+  }
   std::string validate();
 };
 

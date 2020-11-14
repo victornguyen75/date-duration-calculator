@@ -5,8 +5,8 @@ int rataDie(int month, int day, int year);
 
 int main()
 {
-  Date date1 = {0, 0, 0};
-  Date date2 = {0, 0, 0};
+  Date date1;
+  Date date2;
   int difference = 0;
 
   std::cout << "Please enter two dates: ";
