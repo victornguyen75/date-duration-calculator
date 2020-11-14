@@ -21,17 +21,6 @@ int main()
   return 0;
 }
 
-int rataDie(int month, int day, int year)
-{
-  if (month < 3)
-  {
-    year--;
-    month += 12;
-  }
-
-  return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month - 457) / 5 + day - 306;
-}
-
 void validateInput(Date date1, Date date2)
 {
   date1.validate();
@@ -47,4 +36,15 @@ void validateInput(Date date1, Date date2)
     std::cout << "\nDate 2 is invalid because " << date2.getError() << std::endl;
     exit(1);
   }
+}
+
+int rataDie(int month, int day, int year)
+{
+  if (month < 3)
+  {
+    year--;
+    month += 12;
+  }
+
+  return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month - 457) / 5 + day - 306;
 }
