@@ -2,8 +2,9 @@
 #include <string>
 using namespace std;
 
-struct date
+class Date
 {
+public:
   int year;
   int month;
   int day;
@@ -44,8 +45,8 @@ int rataDie(int month, int day, int year);
 
 int main()
 {
-  date date1 = {0, 0, 0};
-  date date2 = {0, 0, 0};
+  Date date1 = {0, 0, 0};
+  Date date2 = {0, 0, 0};
   int difference = 0;
 
   cout << "Please enter two dates: ";
