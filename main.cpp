@@ -13,17 +13,17 @@ int main()
   scanf("%d/%d/%d %d/%d/%d", &date1.month, &date1.day, &date1.year, &date2.month, &date2.day, &date2.year);
   printf("\nDate 1: %d/%d/%d\nDate 2: %d/%d/%d\n", date1.month, date1.day, date1.year, date2.month, date2.day, date2.year);
 
-  date1.error = date1.validate();
-  date2.error = date2.validate();
+  date1.validate();
+  date2.validate();
 
-  if (date1.error != "None.")
+  if (date1.getError() != "None.")
   {
-    std::cout << "\nDate 1 is invalid because " << date1.error << std::endl;
+    std::cout << "\nDate 1 is invalid because " << date1.getError() << std::endl;
     return 0;
   }
-  else if (date2.error != "None.")
+  else if (date2.getError() != "None.")
   {
-    std::cout << "\nDate 2 is invalid because " << date2.error << std::endl;
+    std::cout << "\nDate 2 is invalid because " << date2.getError() << std::endl;
     return 0;
   }
 

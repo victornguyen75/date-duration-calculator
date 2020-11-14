@@ -9,45 +9,58 @@ public:
   int year;
   int month;
   int day;
-  std::string error;
   Date()
   {
     year = 0;
     month = 0;
     day = 0;
   }
-  std::string validate();
+  void validate();
+  std::string getError();
+
+private:
+  std::string error;
 };
 
-std::string Date::validate()
+void Date::validate()
 {
   if (day < 1 || day > 31)
   {
-    return "this day is invalid.";
+    error = "this day is invalid.";
+    return;
   }
   else if (month < 1 || month > 12)
   {
-    return "this month is invalid.";
+    error = "this month is invalid.";
+    return;
   }
   else if (year < 0)
   {
-    return "this year is invalid.";
+    error = "this year is invalid.";
+    return;
   }
 
   if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31)
   {
-    return "day 31 does not exist for this month.";
+    error = "day 31 does not exist for this month.";
+    return;
   }
   else if ((month == 2) && (year % 4 == 0) && day > 29)
   {
-    return "this day is invalid for Febuary.";
+    error = "this day is invalid for Febuary.";
+    return;
   }
   else if ((month == 2) && (year % 4 != 0) && day > 28)
   {
-    return "this day is invalid for Febuary.";
+    error = "this day is invalid for Febuary.";
+    return;
   }
 
-  return "None.";
+  error = "None.";
 }
 
+std::string Date::getError()
+{
+  return error;
+}
 #endif
