@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Date.h"
-using namespace std;
 
 int rataDie(int month, int day, int year);
 
@@ -10,7 +9,7 @@ int main()
   Date date2 = {0, 0, 0};
   int difference = 0;
 
-  cout << "Please enter two dates: ";
+  std::cout << "Please enter two dates: ";
   scanf("%d/%d/%d %d/%d/%d", &date1.month, &date1.day, &date1.year, &date2.month, &date2.day, &date2.year);
   printf("\nDate 1: %d/%d/%d\nDate 2: %d/%d/%d\n", date1.month, date1.day, date1.year, date2.month, date2.day, date2.year);
 
@@ -19,17 +18,17 @@ int main()
 
   if (date1.error != "None.")
   {
-    cout << "\nDate 1 is invalid because " << date1.error << endl;
+    std::cout << "\nDate 1 is invalid because " << date1.error << std::endl;
     return 0;
   }
   else if (date2.error != "None.")
   {
-    cout << "\nDate 2 is invalid because " << date2.error << endl;
+    std::cout << "\nDate 2 is invalid because " << date2.error << std::endl;
     return 0;
   }
 
   difference = rataDie(date2.month, date2.day, date2.year) - rataDie(date1.month, date1.day, date1.year);
-  cout << "The difference between the two dates is " << difference << " day(s)." << endl;
+  std::cout << "The difference between the two dates is " << difference << " day(s)." << std::endl;
   return 0;
 }
 
