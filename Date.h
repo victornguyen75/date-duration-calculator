@@ -9,14 +9,14 @@ public:
   int year;
   int month;
   int day;
+  void validate();
+  std::string getError();
   Date()
   {
     year = 0;
     month = 0;
     day = 0;
   }
-  void validate();
-  std::string getError();
 
 private:
   std::string error;
